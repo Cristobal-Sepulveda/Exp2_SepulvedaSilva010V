@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quienes somos</title>
+    <!--HTML5-->
+    <meta charset="utf-8">
+    <!--Bootstrap-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+    <!--CSS-->
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <!-- Boilerplate Code-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+            crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+            crossorigin="anonymous">
+    </script>  
+</head>
+<body>
+    <!-- NavBar-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- logo -->
+        <a class="navbar-brand" href="#" >
+            <img id="logo" src="../../img/logo.jpg" width="30" height="30" alt="" >
+        </a>
+        <!-- enlaces -->
+        <div class="collapse navbar-collapse" id="opciones">   
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href=index.html>Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=galeria.html>Galeria de productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=somos.html>Quienes somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=contacto.html>Contactanos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#myModal">Registro</a>
+                </li>
+            </ul>
+        </div>
+    </nav>   
+
+                
+    <!-- CONTENIDO DE SOMOS.HTML-->
+    <div class="somosBox">
+        <h1>Quienes somos</h1>
+        <p class="contentText">Vision: Ser una tienda reconocida por la calidad de sus productos. </p> 
+        <p class="contentText"> Mision: Vender productos novedosos, a buenos precios y con despacho sin costo.</p>
+        <p class="contentText">CONTACTO: mail.mail@mail.mail</p>
+        <p class="contentText">DIRECCION: Inserte direccion #123, comuna, ciudad.</p>
+        <a class ="center" href="https://www.youtube.com/watch?v=bDy5QHmR-Kc">Haz click para ver un video de nuestra tienda</a>
+        <img id="imagenUnica"src="../../img/suculentas.jpg"/>
+    </div>
+               
+    <iframe class= "ifFooter" src="../components/footer.html"></iframe>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">              
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <h1>Registro de usuarios</h1>
+                    <!-- Formulario-->
+                    <div id="caja">
+                        <hr>
+                        <form id="mi-formulario" action="index.html" method="post">
+                            <label>Correo Electrónico: </label>
+                            <input type="text" name="email" required placeholder="nombre@dominio.cl">
+                          
+                            <label>Contraseña: </label>
+                            <input type="password" id="password" name="password" minlength="8">
+                                 
+                            <label>Reingresa contraseña: </label>
+                            <input type="password" name="password2" minlength="8">
+                               
+                            <button id="buttonEnviar">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>                  
+        </div>              
+    </div>
+</body>
+<style>
+    #imagenUnica{
+        width: 200px;
+        height: 200px;
+    }
+    .somosBox{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    </style>
+</html>

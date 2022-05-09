@@ -1,0 +1,128 @@
+#logo{
+    margin-left: 24px;
+}
+
+#tabla-precios {
+  display:inline-block;
+  width:100%;
+  margin-top: 24px;
+  margin-left:6%;
+ }
+
+body{
+   background-color: rgb(72, 109, 72);
+   
+}
+
+h1{
+  text-align: center;
+  color: white;
+  
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+ 
+ .precio-col {
+  display:inline-block;
+  background-color:#f3f3f3;
+  width:20%;
+  margin-right:2%;
+  border-radius:10px;
+  margin-bottom:50px;
+  box-shadow: 0px 2px 5px #ddd
+ }
+  
+ /*Headers*/
+ 
+ .precio-col-header {
+  background-color:yellowgreen;
+  padding:0px;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px
+ }
+ 
+ .precio-col-header h3 {
+  color:#f3f3f3;
+  text-align:center;
+  font-size:30px;
+  font-weight:600;
+  margin-bottom:0
+ }
+ 
+ .precio-col-header p {
+  text-align:center;
+  color:#f3f3f3;
+  font-size:14px;
+  margin-bottom:0
+ }
+ 
+ 
+ .precio-col-features {
+  padding: 20px 20px 20px 20px;
+  background-color: yellow;
+ }
+ 
+ .precio-col-features p {
+  margin:0;
+  text-align:center;
+  border-top:1px solid #ddd
+ } 
+ 
+ .precio-col-comprar {
+  padding:10px;
+  max-width:250px;
+  text-align:center;
+  color: white;
+  background-color:#dd9933;
+  margin: 20px auto 20px;
+  border-radius:10px;
+  border: 2px solid #dd9933;
+  transition: all 0.3s
+ }
+ 
+ .precio-col-comprar a {
+  color:#f3f3f3;
+  padding:10px;
+  font-size:20px;
+  text-transform:uppercase;
+  transition: all 0.3s
+ }
+ 
+ .precio-col-comprar:hover {
+  background-color:#f3f3f3;
+  transition: all 0.3s
+ }
+ 
+ .precio-col-comprar:hover a {
+  color:#dd9933;
+  transition: all 0.3s
+ }
+
+.center{
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 400px;
+  max-width: 400px;
+}
+.contentText{
+  color:white
+}
+
+.ifnavbar{
+  min-width:100% !important;
+}
+
+.ifFooter{
+  min-width:100% !important;
+  height: 13.3% !important;
+}
+
+      
