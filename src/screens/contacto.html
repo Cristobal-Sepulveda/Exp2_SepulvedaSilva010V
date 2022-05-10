@@ -15,17 +15,17 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
             crossorigin="anonymous">
     </script>  
-    
+
     <!--CSS-->
     <link href="../styles/style.css" rel="stylesheet" type="text/css">
     <!-- GoogleFonts: ROBOTO-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-    <!--Jquery-Formulario --> 
+    <!--Jquery-Formularios --> 
     <script>
         $(document).ready(function () {
-          $("#formulario-contactanos").validate({
+            $("#formulario-contactanos").validate({
                 rules: {
                     fullNom:{
                         required:true
@@ -56,8 +56,43 @@
                     form.submit();
                 }
           })
-        }) 
-  
+        })   
+        $(document).ready(function () {
+            $("#formulario-modal").validate({
+                rules:{
+                    email:{
+                        required: true,
+                        email: true
+                    },
+                    password:{
+                        required: true,
+                    },
+                    password2:{
+                        required: true,
+                        equalTo: "#password"
+                    }
+                },
+                messages:{
+                    email: {
+                        required: 'Ingresa tu correo electrónico',
+                        email: 'Formato de correo no válido'
+                    },
+                    password: {
+                        required: 'Ingresa una contraseña',
+                        minlength: 'Para crear una contraseña, utilice a lo menos 8 caracteres.',
+                        
+                    },
+                    password2: {
+                        required: 'Reingresa la contraseña',
+                        equalTo: 'Las contraseñas ingresadas no coinciden',
+                        minlength: 'Para crear una contraseña, utilice a lo menos 8 caracteres.'
+                    },
+                },
+                submitHandler: function(form){
+                    alert("Te acabas de registrar en nuestra tienda. Cuando compres, recuerda ingresar uno de los codigos incluidos en los mails que te enviaremos una vez al mes.")
+                }
+            })
+        })
     </script>
 </head>
 <body>
@@ -154,18 +189,23 @@
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-            <!-- Modal content-->
+
+            <!-- Modal BOX-->
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
+
+                <!--Modal Header-->
+                <div id="modalHeader" class="modal-header">
+                    <h4 class="modal-title">Registrate con nosotros y podras obtener descuentos</h4>
+                    <button id="botonX" type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
+
+                <!--Modal Body-->
                 <div class="modal-body">
                     <h1>Registro de usuarios</h1>
                     <!-- Formulario-->
                     <div id="caja">
                         <hr>
-                        <form id="mi-formulario" action="index.html" method="post">
+                        <form id="formulario-modal" action="index.html" method="post">
                             <label>Correo Electrónico: </label>
                             <input type="text" name="email" required placeholder="nombre@dominio.cl">
                 
@@ -174,21 +214,37 @@
                       
                             <label>Reingresa contraseña: </label>
                             <input type="password" name="password2" minlength="8">
-                      
-                            <button id="buttonEnviar">Enviar</button>
+                            <div class="botonesModal">
+                                <button class="botonAleatorio">Enviar</button>
+                                <button type="button" class="botonAleatorio" data-dismiss="modal">Volver</button>
+                            </div>
                         </form>
                     </div>
                 </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-          
+
+                <!--Modal Footer-->
+                <!-- <div class="modal-footer">
+                <button type="button" class="botonAleatorio" data-dismiss="modal">Volver</button>
+                </div> -->
+        
+            </div>         
         </div>
     </div>
     
 </body>
 <style>
+
+    #logo{
+        margin-left: 24px;
+    }
+    #formButtons{
+        display:inline-flex;
+        clear:both;
+        float:left;
+    }
+    #buttonLimpiar{
+        width: 98px;
+    }
     body{
         font-family: 'Roboto', sans-serif;
     }
@@ -202,20 +258,6 @@
         color: red;
         width: 300px;
         font-size: 0.8em;
-    }
-    #logo{
-        margin-left: 24px;
-    }
-    #formButtons{
-        display:inline-flex;
-        clear:both;
-        float:left;
-    }
-    #buttonEnviar {
-        width: 98px;
-    }
-    #buttonLimpiar{
-        width: 98px;
     }
 
 
