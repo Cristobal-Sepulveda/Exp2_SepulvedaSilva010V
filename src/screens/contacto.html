@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <title>Document</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--CSS-->
-    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <!--HTML5-->
+    <meta charset="utf-8">
     <!--Bootstrap-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="../../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+    <!--Jquery-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous">
@@ -23,84 +20,54 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
             crossorigin="anonymous">
-    </script>
-
-    <!-- Jquery-->
-    <script>
-        $(document).ready(function () {
-            $("#formulario-contactanos").validate({
-                rules: {
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    fullNom:{
-                        required: true,
-                    },
-                    fullAp:{
-                        required: true,
-                    },
-                    mensaje:{
-                        required: true,
-                    }
-                },
-                messages: {
-                    email: {
-                        required: 'Ingresa tu correo electrónico',
-                        email: 'Formato de correo no válido'
-                    },
-                    fullNom:{
-                        required: 'Ingresa tus Nombres',
-                    },
-                    fullAp:{
-                        required: 'Ingresa tus Apellidos',
-                    }
-                }
-            });
-            $("#buttonEnviar").click(function(){
-                alert('mensaje enviado')
-            });
-        });
-    </script>
+    </script>  
+    <!--CSS-->
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <!-- GoogleFonts: ROBOTO-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <!-- NavBar-->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                  
-                <!-- logo -->
-                <a class="navbar-brand" href="#" >
-                    <img id="logo" src="../../img/logo.jpg" width="30" height="30" alt="" >
-                </a>
-                    
-                <!-- enlaces -->
-                <div class="collapse navbar-collapse" id="opciones">   
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href=index.html>Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href=galeria.html>Galeria de productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href=somos.html>Quienes somos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href=contacto.html>Contactanos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#myModal">Registro</a>
-                        </li>
-                    </ul>
-                </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+          
+        <!-- logo -->
+        <a class="navbar-brand" href="#" >
+            <img id="logo" src="../../img/logo.jpg" width="30" height="30" alt="" >
+        </a>
+            
+        <!-- enlaces -->
+        <div class="collapse navbar-collapse" id="opciones">   
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href=index.html>Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=galeria.html>Galeria de productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=somos.html>Quienes somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=contacto.html>Contactanos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#myModal">Registro</a>
+                </li>
+                <li>
+                    <text>Bienvenido a Art Plants</text>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <h1>Contactanos</h1>
-    <hr>
-    <div id="caja">
-        
+    <div class="center">
+        <h1>Contactanos</h1>
+        <hr>
         <form id="formulario-contactanos" action="index.html" method="post">
             <h5>Ingresa tu mensaje junto a tus datos personales y te contactaremos</h1>
             <label>Nombres</label>
@@ -185,18 +152,19 @@
           
         </div>
     </div>
+    
 </body>
 <style>
     body{
-        background-color: green;
+        font-family: 'Roboto', sans-serif;
     }
-    #caja{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        color: white;   
+    text{ 
+        font-size: 20px ;
+        margin-left:30px;
+        text-align: center;
+        color:white;  
     }
+ 
     #logo{
         margin-left: 24px;
     }
@@ -210,35 +178,6 @@
     }
     #buttonLimpiar{
         width: 98px;
-    }
-    h1{
-        color: white;
-        margin-left: auto;
-        margin-right: auto;
-        width: 40%;
-    }
-    hr{
-        color: white;
-        width: 40%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    input {
-        float: left;
-        width: 200px;
-        margin-bottom: 10px;
-    }
-    label {
-        clear: both;
-        float: left;
-        width: 180px;
-    }
-    textarea{
-        float: left;
-        width: 200px;
-        max-height: 100px;
-        margin-bottom: 10px;
     }
 
 

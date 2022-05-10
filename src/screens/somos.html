@@ -6,11 +6,9 @@
     <meta charset="utf-8">
     <!--Bootstrap-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link href="../../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
-    <!--CSS-->
-    <link href="../styles/style.css" rel="stylesheet" type="text/css">
-    <!-- Boilerplate Code-->
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!--Jquery-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous">
@@ -23,6 +21,12 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
             crossorigin="anonymous">
     </script>  
+    <!--CSS-->
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <!-- GoogleFonts: ROBOTO-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <!-- NavBar-->
@@ -30,10 +34,12 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
             <span class="navbar-toggler-icon"></span>
         </button>
+          
         <!-- logo -->
         <a class="navbar-brand" href="#" >
             <img id="logo" src="../../img/logo.jpg" width="30" height="30" alt="" >
         </a>
+            
         <!-- enlaces -->
         <div class="collapse navbar-collapse" id="opciones">   
             <ul class="navbar-nav">
@@ -52,13 +58,16 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="modal" data-target="#myModal">Registro</a>
                 </li>
+                <li>
+                    <text>Bienvenido a Art Plants</text>
+                </li>
             </ul>
         </div>
-    </nav>   
+    </nav>
 
                 
     <!-- CONTENIDO DE SOMOS.HTML-->
-    <div class="somosBox">
+    <div class="center">
         <h1>Quienes somos</h1>
         <p class="contentText">Vision: Ser una tienda reconocida por la calidad de sus productos. </p> 
         <p class="contentText"> Mision: Vender productos novedosos, a buenos precios y con despacho sin costo.</p>
@@ -96,7 +105,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">              
+        <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -111,25 +120,35 @@
                         <form id="mi-formulario" action="index.html" method="post">
                             <label>Correo Electrónico: </label>
                             <input type="text" name="email" required placeholder="nombre@dominio.cl">
-                          
+                
                             <label>Contraseña: </label>
                             <input type="password" id="password" name="password" minlength="8">
-                                 
+                      
                             <label>Reingresa contraseña: </label>
                             <input type="password" name="password2" minlength="8">
-                               
+                      
                             <button id="buttonEnviar">Enviar</button>
                         </form>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>                  
-        </div>              
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+          
+        </div>
     </div>
 </body>
 <style>
+    body{
+        font-family: 'Roboto', sans-serif;
+    }
+    text{
+        color:white;   
+        font-size: 20px ;
+        margin-left:30px;
+        text-align: center;  
+    }
     #imagenUnica{
         width: 200px;
         height: 200px;
@@ -140,5 +159,5 @@
         margin-right: auto;
         width: 50%;
     }
-    </style>
+</style>
 </html>
