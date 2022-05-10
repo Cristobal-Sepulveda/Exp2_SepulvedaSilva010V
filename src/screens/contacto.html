@@ -1,32 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>Contactanos</title>
     <!--HTML5-->
     <meta charset="utf-8">
     <!--Bootstrap-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link href="../../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
-    <!--Jquery-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
-            crossorigin="anonymous">
-    </script>
+    <link href="../../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
             crossorigin="anonymous">
-    </script>  
+    </script>   
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
     <!--CSS-->
     <link href="../styles/style.css" rel="stylesheet" type="text/css">
     <!-- GoogleFonts: ROBOTO-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <!--Jquery-Formulario --> 
+    <script>
+        $(document).ready(function () {
+          $("#formulario-contactanos").validate({
+                rules: {
+                    fullNom:{
+                        required:true
+                    },
+                    fullAp:{
+                        required:true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },                    
+                },
+                
+                messages: {
+                    fullNom:{
+                        required: 'Ingrese sus nombres'
+                    },
+                    fullAp:{
+                        required: 'Ingrese sus apellidos'
+                    },
+                    email: {
+                      required: 'Ingresa tu correo electrónico',
+                      email: 'Formato de correo no válido'
+                  },
+                },
+                submitHandler: function(form){
+                    alert("Gracias por ponerse en contacto con nosotros. \n\nLe contactaremos en los proximos días.");
+                    form.submit();
+                }
+          })
+        }) 
+  
+    </script>
 </head>
 <body>
     <!-- NavBar-->
@@ -65,11 +96,16 @@
         </div>
     </nav>
 
+    <!-- Contenido Propio de la Screen-->
     <div class="center">
         <h1>Contactanos</h1>
         <hr>
-        <form id="formulario-contactanos" action="index.html" method="post">
-            <h5>Ingresa tu mensaje junto a tus datos personales y te contactaremos</h1>
+        <h5>Ingresa tu mensaje junto a tus datos personales y te contactaremos</h1>
+        <form id="formulario-contactanos" 
+              action="index.html"
+              method="post"
+              onsubmit="return validateForm()">    
+
             <label>Nombres</label>
             <input type="text" name="fullNom" required placeholder="Nombres">
 
@@ -85,10 +121,7 @@
             <div id="formButtons">
                 <button id="buttonEnviar">Enviar</button>
             </div>
-            
         </form>
-        
-
     </div>
     
     <!-- Footer-->
@@ -164,7 +197,11 @@
         text-align: center;
         color:white;  
     }
- 
+    label.error {
+        color: red;
+        width: 300px;
+        font-size: 0.8em;
+    }
     #logo{
         margin-left: 24px;
     }
@@ -172,7 +209,7 @@
         display:inline-flex;
         clear:both;
         float:left;
-       }
+    }
     #buttonEnviar {
         width: 98px;
     }
