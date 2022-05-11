@@ -105,6 +105,7 @@
     </nav>
 
     <h1>Galeria de productos</h1>
+    
     <div id="tabla-precios">
 
         <div class="precio-col">
@@ -115,109 +116,100 @@
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Producto 1</p>
+                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
             </div>
-            <div class="precio-col-comprar">
-                <a>Comprar</a>
-            </div>
+
         </div>
-            
+
         <div class="precio-col">
             <div class="precio-col-header">
                 <h3>$5.000</h3>
                 <p>Repisa 2</p>
-            </div>            
+            </div>    
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Repisa 2</p>
-            </div>    
-            <div class="precio-col-comprar">
-                <a>Comprar</a>
+                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
             </div>
+
         </div>
 
         <div class="precio-col">
             <div class="precio-col-header">
                 <h3>$8.000</h3>
                 <p>Repisa 3</p>
-            </div>       
+            </div>    
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Repisa 3</p>
-            </div>   
-            <div class="precio-col-comprar">
-                <a>Comprar</a>
-            </div>
+                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
+              </div>
         </div>
-            
+
         <div class="precio-col">
             <div class="precio-col-header">
                 <h3>$3.990</h3>
                 <p>Repisa 4</p>
-            </div>       
+            </div>    
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Repisa 4</p>
-            </div> 
-            <div class="precio-col-comprar">
-                <a>Comprar</a>
-            </div>                   
+                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
+            </div>
+
         </div>
-            
+
         <div class="precio-col">
             <div class="precio-col-header">
                 <h3>$6.990</h3>
                 <p>Repisa 5</p>
-            </div>
+            </div>    
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Repisa 5</p>
-            </div>                       
-            <div class="precio-col-comprar">
-                <a>Comprar</a>
+                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
             </div>
+
         </div>
-                
+
         <div class="precio-col">
             <div class="precio-col-header">
                 <h3>$49.990</h3>
                 <p>Repisa Bamboo multiuso</p>
-            </div>               
+            </div>    
             <div class="precio-col-features">
-                <img src="../../img/rack-bamboo-multiuso.jpg" width="280px" height="183px"/>
+                <img src="../../img/rack-bamboo-multiuso.jpg"/>
                 <p> Repisa 6</p>
-            </div>                           
-            <div class="precio-col-comprar">
-                <a>Comprar</a>
+                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
             </div>
+
         </div>
 
         <div class="precio-col">
             <div class="precio-col-header">
                 <h3>$79.990</h3>
                 <p>Repisa exclusive</p>
-            </div>                       
-            <div class="precio-col-features"> 
+            </div>    
+            <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Repisa 7</p>
+                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
             </div>
-            <div class="precio-col-comprar">
-                <a>Comprar</a>
-            </div>            
+
         </div>
 
         <div class="precio-col">
             <div class="precio-col-header">
                 <h3>$129.990</h3>
                 <p>Repisa elite</p>
-            </div>               
+            </div>    
             <div class="precio-col-features">
                 <img src="../../img/repisaelite.jpeg" width="280px" height="183px"/>
                 <p> Repisa 8</p>
-            </div>               
-            <div class="precio-col-comprar">
-                <a>Comprar</a>
+                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
             </div>
-        </div>        
+
+        </div>       
     </div>
     
     <!-- Footer-->
@@ -302,83 +294,66 @@
         margin-left:30px;
         text-align: center;  
     }
+    h1{
+        text-align: center;
+        color:#4802c9ee;
+        margin-top:10px;
+    }
     #tabla-precios {
-        display:inline-block;
-        width:90%;
+        display:block;
+        width:50%;
         margin-top: 24px;
-        margin-left:6%;
-    }
-    .precio-col-header {
-        background-color:yellowgreen;
-        padding:0px;
-        border-top-left-radius:10px;
-        border-top-right-radius:10px
-    }
- 
-    .precio-col-header h3 {
-        color:#f3f3f3;
-        text-align:center;
-        font-size:30px;
-        font-weight:600;
-        margin-bottom:0
-    }
- 
-    .precio-col-header p {
-        text-align:center;
-        color:#f3f3f3;
-        font-size:14px;
-        margin-bottom:0
-    }
- 
- 
-    .precio-col-features {
-        padding: 20px 20px 20px 20px;
-        background-color: yellow;
-    }
- 
-    .precio-col-features p {
-        margin:0;
-        text-align:center;
-        border-top:1px solid #ddd
-    } 
- 
-    .precio-col-comprar {
-        padding:10px;
-        max-width:250px;
-        text-align:center;
-        color: white;
-        background-color:#dd9933;
-        margin: 20px auto 20px;
-        border-radius:10px;
-        border: 2px solid #dd9933;
-        transition: all 0.3s
-    }
- 
-    .precio-col-comprar a {
-        color:#f3f3f3;
-        padding:10px;
-        font-size:20px;
-        text-transform:uppercase;
-        transition: all 0.3s
-    }
- 
-    .precio-col-comprar:hover {
-        background-color:#f3f3f3;
-        transition: all 0.3s
-    }
- 
-    .precio-col-comprar:hover a {
-        color:#dd9933;
-        transition: all 0.3s
+        margin-left:auto;
+        margin-right: auto;
     }
     .precio-col {
         display:inline-block;
+        
         background-color:#f3f3f3;
-        width:20%;
-        margin-right:2%;
+        text-align:center;
+        width:30%;
         border-radius:10px;
         margin-bottom:50px;
-        box-shadow: 0px 2px 5px #ddd
+        border-width:0.5px;
+        border-style:solid;
+        border-color:black;
     }
+    
+    .precio-col-header {
+        background-color:yellowgreen;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+    }
+    
+    .precio-col-header h3 {
+        color:#f3f3f3;    
+        font-size: 24px;
+        font-weight:600;
+    }
+
+    .precio-col-header p {
+        color:#f3f3f3;
+        font-size:14px;
+    } 
+
+    .precio-col-features {
+        background-color: white;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+    }
+    .precio-col-features img{
+        width:100%;
+        height:150px;
+    }
+    .precio-col-features p{
+        margin-top: 5px;
+    }
+    .precio-col-features button{
+        width:100%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+ 
 </style>
 </html>
