@@ -4,10 +4,12 @@
     <title>Galeria de productos</title>
     <!--HTML5-->
     <meta charset="utf-8">
+
     <!--Bootstrap-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link href="../../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+    <link href="../../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
     <!--Jquery-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,12 +23,15 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
             crossorigin="anonymous">
     </script>  
+
     <!--CSS-->
     <link href="../styles/style.css" rel="stylesheet" type="text/css">
+
     <!-- GoogleFonts: ROBOTO-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    
     <!--Jquery-Formulario -->
     <script>    
         $(document).ready(function () {
@@ -65,7 +70,45 @@
                 }
             })
         })
-    </script>    
+    </script>
+    
+    <!--Javascript: IMPORTANDO FUNCIONES.JS-->
+    <script src="../../utils/funciones.js"></script>
+    
+    <!--JAVASCRIPT: FUNCIONES PROPIAS DE LA SCREEN -->
+    <!--dibujadoraDeTablaEnCarrito-->
+    <script>
+        const dibujadoraDeTablaEnCarrito = () =>{
+            let dibujadora = obtenerElListadoDeProductosEnElCarrito();
+            if(dibujadora.length===0){
+                return;
+            }
+            $('#tablaDelCarrito').find('tbody tr').remove();
+            let count=1;
+            let totalAPagar = 0;
+            for(const element of dibujadora){
+                $('#tablaDelCarrito').find('tbody').append('<tr>'+
+                                                                '<th scope="row">'+count+'</th>'+
+                                                                '<td>'+element.nombre+'</td>'+
+                                                                '<td>'+element.cantidad+'</td>'+
+                                                                '<td>'+element.precioUnitario+'</td>'+
+                                                                '<td>'+element.precioPorCantidad+'</td>'+
+                                                           '</tr>');
+                totalAPagar=totalAPagar+(element.precioPorCantidad);                                                                     
+                count++;
+            }
+
+            $('#tablaDelCarrito').find('tbody').append('<tr>'+
+                                                            '<th style="border-bottom:0px" scope="row"></th>'+
+                                                            '<td style="border-bottom:0px"></td>'+
+                                                            '<td style="border-bottom:0px"></td>'+
+                                                            '<td class="totalEnTabla" style="background-color:lightgrey;">Total:</td>'+
+                                                            '<td class="totalEnTabla" style="background-color:lightgrey;">'+totalAPagar+'</td>'+
+                                                        '</tr>'
+            )
+        }
+    </script> 
+
 </head>
 <body>
     <!-- NavBar-->
@@ -108,113 +151,114 @@
 
     <!-- Título y boton de carrito-->
     <h1>Galeria de productos</h1>
-    <button id="botonAbrecarrito" data-toggle="modal" data-target="#modalCarrito">Comprar carrito</button>
+    <button onclick="obtenerElListadoDeProductosEnElCarrito()">asd</button>
+    <button id="botonAbrecarrito" data-toggle="modal" data-target="#modalCarrito" onclick="dibujadoraDeTablaEnCarrito()">Comprar carrito</button>
     
     <!-- Grid de productos-->
     <div id="tabla-precios">
 
         <div class="precio-col">
             <div class="precio-col-header">
-                <h3>$15.000</h3>
-                <p>Producto 1</p>
+                <p id="productoPrecio1" style="font-size:26px; margin-bottom:0px">$15.000</p>
+                <p id="productoNombre1">Producto 1</p>
             </div>    
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Producto 1</p>
-                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
+                <button class="botonAleatorio" data-dismiss="modal" onclick="agregarAlCarrito(productoNombre1, productoPrecio1)">Añadir al carrito</button>
             </div>
-
         </div>
 
         <div class="precio-col">
             <div class="precio-col-header">
-                <h3>$5.000</h3>
-                <p>Repisa 2</p>
+                <p id="productoPrecio2" style="font-size:26px; margin-bottom:0px">$5.000</p>
+                <p id="productoNombre2">Repisa 2</p>
             </div>    
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
-                <p> Repisa 2</p>
-                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
+                <p > Repisa 2</p>
+                <button class="botonAleatorio" data-dismiss="modal" onclick="agregarAlCarrito(productoNombre2, productoPrecio2)" >Añadir al carrito</button>
             </div>
 
         </div>
 
         <div class="precio-col">
             <div class="precio-col-header">
-                <h3>$8.000</h3>
-                <p>Repisa 3</p>
+                <p id="productoPrecio3" style="font-size:26px; margin-bottom:0px">$8.000</p>
+                <p id="productoNombre3">Repisa 3</p>
             </div>    
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Repisa 3</p>
-                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
+                <button class="botonAleatorio" data-dismiss="modal" onclick="agregarAlCarrito(productoNombre3, productoPrecio3)">Añadir al carrito</button>
               </div>
         </div>
 
         <div class="precio-col">
             <div class="precio-col-header">
-                <h3>$3.990</h3>
-                <p>Repisa 4</p>
+                <p id="productoPrecio4" style="font-size:26px; margin-bottom:0px">$3.990</p>
+                <p id="productoNombre4">Repisa 4</p>
             </div>    
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Repisa 4</p>
-                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
+                <button class="botonAleatorio" data-dismiss="modal" onclick="agregarAlCarrito(productoNombre4, productoPrecio4)">Añadir al carrito</button>
             </div>
 
         </div>
 
         <div class="precio-col">
             <div class="precio-col-header">
-                <h3>$6.990</h3>
-                <p>Repisa 5</p>
+                <p id="productoPrecio5" style="font-size:26px; margin-bottom:0px">$6.990</p>
+                <p id="productoNombre5">Repisa 5</p>
             </div>    
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Repisa 5</p>
-                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
+                <button class="botonAleatorio" data-dismiss="modal" onclick="agregarAlCarrito(productoNombre5, productoPrecio5)">Añadir al carrito</button>
             </div>
 
         </div>
 
         <div class="precio-col">
             <div class="precio-col-header">
-                <h3>$49.990</h3>
-                <p>Repisa Bamboo multiuso</p>
+                <p id="productoPrecio6" style="font-size:26px; margin-bottom:0px">$49.990</p>
+                <p id="productoNombre6">Repisa Bamboo multiuso</p>
             </div>    
             <div class="precio-col-features">
                 <img src="../../img/rack-bamboo-multiuso.jpg"/>
                 <p> Repisa 6</p>
-                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
+                <button class="botonAleatorio" data-dismiss="modal" onclick="agregarAlCarrito(productoNombre6, productoPrecio6)">Añadir al carrito</button>
             </div>
 
         </div>
 
         <div class="precio-col">
             <div class="precio-col-header">
-                <h3>$79.990</h3>
-                <p>Repisa exclusive</p>
+                <p id="productoPrecio7" style="font-size:26px; margin-bottom:0px">$79.990</p>
+                <p id="productoNombre7">Repisa exclusive</p>
             </div>    
             <div class="precio-col-features">
                 <img src="../../img/repizas.jpg"/>
                 <p> Repisa 7</p>
-                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
+                <button class="botonAleatorio" data-dismiss="modal" onclick="agregarAlCarrito(productoNombre7, productoPrecio7)">Añadir al carrito</button>
             </div>
 
         </div>
 
         <div class="precio-col">
             <div class="precio-col-header">
-                <h3>$129.990</h3>
-                <p>Repisa elite</p>
+                <p id="productoPrecio8" style="font-size:26px; margin-bottom:0px">$129.990</p>
+                <p id="productoNombre8">Repisa elite</p>
             </div>    
             <div class="precio-col-features">
                 <img src="../../img/repisaelite.jpeg" width="280px" height="183px"/>
                 <p> Repisa 8</p>
-                <button class="botonAleatorio" data-dismiss="modal">Añadir al carrito</button>
+                <button class="botonAleatorio" data-dismiss="modal" onclick="agregarAlCarrito(productoNombre8, productoPrecio8)">Añadir al carrito</button>
             </div>
 
-        </div>       
+        </div>     
+
     </div>
     
     <!-- Footer-->
@@ -307,46 +351,25 @@
                     <!--Título del carrito-->
                     <p style="text-align:center;font-size:25px;">Listado de productos</p>
                     <!--Formulario-->
-                    <table id="tablaDelCarrito"class="table table-sm">
-                        <!--Encabezados de la tabla-->
-                        <thead style="background-color:lightgrey;">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Producto</th>
-                            <th scope="col">Cantidad</th>
-                            <th scope="col">Valor unitario</th>
-                            <th scope="col">Valor</th>
-                          </tr>
-                        </thead>
-                        <!--FILA: Contenido de la tabla-->
-                        <tbody>
-                            <!--Una fila de la tabla-->
-                            <tr>
-                                <th scope="row"></th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <!--Una fila de la tabla-->
-                            <tr>
-                                <th scope="row"></th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                            </tr>                            
-                            <!--Total: -->
-                            <tr>
-                                <th style="border-bottom:0px" scope="row"></th>
-                                <td style="border-bottom:0px"></td>
-                                <td style="border-bottom:0px"></td>
-                                <td class="totalEnTabla" style="background-color:lightgrey;">Total:</td>
-                                <td class="totalEnTabla" style="background-color:lightgrey;">$10.000.000.000</td>
-                            </tr>
-                        </tbody>
+                    <div class="table-responsive">
+                        <table id="tablaDelCarrito"class="table table-sm">
+                            <!--Encabezados de la tabla-->
+                            <thead style="background-color:lightgrey;">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Precio unitario</th>
+                                    <th scope="col">Precio por productos</th>
+                                </tr>
+                            </thead>
+
+                            <!--Contenido del precio por el carrito-->
+                            <tbody>       
+                            </tbody>
  
                     </table>
+                    </div>
                     <img src="../../img/logo.jpg" style="width: 80%; height: 350px;border-radius: 10px;" class="center"/>
                     <!--Botones del carrito-->
                     <div class="botonesModal">
@@ -402,6 +425,7 @@
         border-top:2px;
 
     }
+
     .precio-col {
         display:inline-block;       
         background-color:#f3f3f3;
