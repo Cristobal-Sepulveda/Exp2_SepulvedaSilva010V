@@ -75,15 +75,16 @@
     <!--Javascript: IMPORTANDO FUNCIONES.JS-->
     <script src="../../utils/funciones.js"></script>
     
-    <!--JAVASCRIPT: FUNCIONES PROPIAS DE LA SCREEN -->
-    <!--dibujadoraDeTablaEnCarrito-->
+    <!--JAVASCRIPT: FUNCIONES QUE DEBEN SER CARGADAS DESDE AQUI-->
     <script>
         const dibujadoraDeTablaEnCarrito = () =>{
             let dibujadora = obtenerElListadoDeProductosEnElCarrito();
             if(dibujadora.length===0){
                 return;
             }
+            //limpio la tabla, así no habrá duplicidad de filas.
             $('#tablaDelCarrito').find('tbody tr').remove();
+
             let count=1;
             let totalAPagar = 0;
             for(const element of dibujadora){
@@ -107,7 +108,8 @@
                                                         '</tr>'
             )
         }
-    </script> 
+        
+    </script>
 
 </head>
 <body>
@@ -151,7 +153,7 @@
 
     <!-- Título y boton de carrito-->
     <h1>Galeria de productos</h1>
-    <button onclick="obtenerElListadoDeProductosEnElCarrito()">asd</button>
+    
     <button id="botonAbrecarrito" data-toggle="modal" data-target="#modalCarrito" onclick="dibujadoraDeTablaEnCarrito()">Comprar carrito</button>
     
     <!-- Grid de productos-->
@@ -350,6 +352,9 @@
   
                     <!--Título del carrito-->
                     <p style="text-align:center;font-size:25px;">Listado de productos</p>
+                    <button onclick="requestAAPI(document)">ValorUF</button>
+                    <label>Precio UF: </label>
+                    <p id="precioUF"></p>
                     <!--Formulario-->
                     <div class="table-responsive">
                         <table id="tablaDelCarrito"class="table table-sm">
@@ -370,10 +375,10 @@
  
                     </table>
                     </div>
-                    <img src="../../img/logo.jpg" style="width: 80%; height: 350px;border-radius: 10px;" class="center"/>
+                    <img id = "imagenCarrito" src="../../img/logo.jpg" style="width: 80%; height: 350px;border-radius: 10px;" class="center" onmouseenter="desapareceImagen(document)" onmouseleave="reapareceImagen(document)"/>
                     <!--Botones del carrito-->
                     <div class="botonesModal">
-                        <button class="botonAleatorio">Enviar</button>
+                        <button class="botonAleatorio" onclick="irATransbank()">Pagar</button>
                         <button type="button" class="botonAleatorio" data-dismiss="modal">Volver</button>
                     </div>
                 </div>
